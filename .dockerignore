@@ -1,0 +1,27 @@
+# Keep the build context small and avoid baking host-specific junk into the image.
+.git
+.gitattributes
+.gitignore
+
+# Dependencies are installed inside the image, not copied from the host.
+/vendor
+/node_modules
+
+# Never bake local secrets in. The entrypoint creates .env from .env.example.
+.env
+
+# Host build artefacts / logs
+/storage/logs/*.log
+/storage/framework/cache/data/*
+/storage/framework/sessions/*
+/storage/framework/views/*.php
+
+# Laravel's cached package/config manifests are host-specific (they reference
+# dev-only providers like Pail). Let the container regenerate them.
+/bootstrap/cache/*.php
+
+# Editor / OS cruft
+.idea
+.vscode
+.DS_Store
+Thumbs.db
