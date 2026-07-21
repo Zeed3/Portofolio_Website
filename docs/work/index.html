@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Work · Zahwan Satria</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+  
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('theme');
+        if (saved === 'light' || saved === 'dark') {
+          document.documentElement.setAttribute('data-theme', saved);
+        }
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+
+  <div class="site-wrapper">
+
+    
+    <nav class="nav">
+      <a class="nav-logo" href="../">Zahwan</a>
+      <ul class="nav-links">
+        <li><a href="../work" class="active">work</a></li>
+        <li><a href="../about" class="">about</a></li>
+        <li><a href="../resume" class="">resume</a></li>
+        <li>
+          <button type="button" class="theme-toggle" id="theme-toggle" title="Switch between light and dark mode" aria-label="Switch between light and dark mode">
+            <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+            <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          </button>
+        </li>
+      </ul>
+    </nav>
+
+    
+  <section class="section">
+    <div class="page-header">
+      <a href="../" class="back-link">← back</a>
+      <h1 class="page-title">selected works</h1>
+      <p class="page-sub">A collection of projects I've designed and built, from low-level C to full-stack web apps.</p>
+    </div>
+
+    <div class="project-list">
+              <article class="project">
+          <div class="project-head">
+            <div class="work-thumb work-thumb--blue">🐳</div>
+            <div class="project-heading">
+              <h2 class="project-title">This Website</h2>
+                              <span class="project-context">This website</span>
+                          </div>
+            <span class="work-tag work-tag--blue">Web</span>
+          </div>
+
+          <p class="project-desc">This website started as a single static HTML/CSS page and then refactored into a Laravel application, and then containerised so anyone can run it with one command.</p>
+
+                      <ul class="project-highlights">
+                              <li>Refactored from static HTML into a Laravel app where every page is data-driven where content is in the controller and then rendered through Blade.</li>
+                              <li>Multiple pages (home, work, about, resume) built on a single shared Blade layout.</li>
+                              <li>Fully containerized with Docker, so it runs anywhere with one command, with no local PHP setup required.</li>
+                              <li>Runs with no database (file-based sessions/cache), so it can also be exported to static hosting.</li>
+                          </ul>
+          
+                      <div class="project-stack">
+                              <span class="stack-pill">Laravel</span>
+                              <span class="stack-pill">PHP 8.5</span>
+                              <span class="stack-pill">Blade</span>
+                              <span class="stack-pill">Docker</span>
+                              <span class="stack-pill">CSS</span>
+                          </div>
+          
+                      <div class="run-panel">
+  <div class="run-tabs" role="tablist">
+    <button type="button" class="run-tab active" data-tab="docker" role="tab" aria-selected="true">Docker</button>
+    <button type="button" class="run-tab" data-tab="local" role="tab" aria-selected="false">Local PHP</button>
+  </div>
+
+  <div class="run-pane active" data-pane="docker" role="tabpanel">
+    <div class="code-block">
+      <button type="button" class="copy-btn" aria-label="Copy to clipboard">Copy</button>
+      <pre><code>docker compose up --build</code></pre>
+    </div>
+    <p class="run-note">Run from the project root, then open <a href="http://localhost:8000">localhost:8000</a>. No PHP install needed.</p>
+  </div>
+
+  <div class="run-pane" data-pane="local" role="tabpanel" hidden>
+    <div class="code-block">
+      <button type="button" class="copy-btn" aria-label="Copy to clipboard">Copy</button>
+      <pre><code>composer install
+cp .env.example .env
+php artisan key:generate
+php artisan serve</code></pre>
+    </div>
+    <p class="run-note">Requires PHP 8.2+ and Composer, then open <a href="http://localhost:8000">localhost:8000</a>.</p>
+  </div>
+</div>
+                  </article>
+              <article class="project">
+          <div class="project-head">
+            <div class="work-thumb work-thumb--teal">🎮</div>
+            <div class="project-heading">
+              <h2 class="project-title">2048-in-C</h2>
+                              <span class="project-context">Data Structures coursework</span>
+                          </div>
+            <span class="work-tag work-tag--teal">Game</span>
+          </div>
+
+          <p class="project-desc">A terminal-based clone of the game 2048, written in C for Windows. It renders a playable board directly in the console, supports two board sizes, and keeps a persistent, ranked leaderboard between sessions.</p>
+
+                      <ul class="project-highlights">
+                              <li>Selectable 4x4 or 6x6 board, with the grid allocated dynamically as a 2D array (int**) via malloc.</li>
+                              <li>WASD controls with full tile-sliding and merge logic, accumulating score on every merge.</li>
+                              <li>Random 2/4 tile spawning and game-over detection that checks for both empty cells and any remaining merges.</li>
+                              <li>Persistent high-score table written to a file, parsed back on launch and ranked with qsort, with auto-generated player IDs.</li>
+                              <li>Console menu system: New Game / High-score / Exit.</li>
+                          </ul>
+          
+                      <div class="project-stack">
+                              <span class="stack-pill">C</span>
+                              <span class="stack-pill">Win32 console</span>
+                              <span class="stack-pill">Dynamic memory</span>
+                              <span class="stack-pill">File I/O</span>
+                              <span class="stack-pill">qsort</span>
+                          </div>
+          
+                  </article>
+              <article class="project">
+          <div class="project-head">
+            <div class="work-thumb work-thumb--purple">🤖</div>
+            <div class="project-heading">
+              <h2 class="project-title">MayaSense</h2>
+                              <span class="project-context">Team project</span>
+                          </div>
+            <span class="work-tag work-tag--purple">AI</span>
+          </div>
+
+          <p class="project-desc">A Flask-based AI assistant chatbot that helps BINUS University students navigate and adapt to campus life, pairing an OpenAI-powered conversational core with voice interaction and live web scraping for up-to-date campus information.</p>
+
+                      <ul class="project-highlights">
+                              <li>Conversational core powered by the OpenAI API, driven by a defined assistant persona.</li>
+                              <li>Voice interaction that captures and plays back spoken questions and answers via PyAudio.</li>
+                              <li>Scrapes the web with BeautifulSoup and requests to surface up-to-date campus information.</li>
+                              <li>Multilingual replies through automatic translation (googletrans).</li>
+                              <li>Flask backend serving a custom HTML/CSS/JavaScript chat interface, with JSON-persisted conversation history.</li>
+                          </ul>
+          
+                      <div class="project-stack">
+                              <span class="stack-pill">Python</span>
+                              <span class="stack-pill">Flask</span>
+                              <span class="stack-pill">OpenAI API</span>
+                              <span class="stack-pill">PyAudio</span>
+                              <span class="stack-pill">BeautifulSoup</span>
+                              <span class="stack-pill">JavaScript</span>
+                              <span class="stack-pill">HTML/CSS</span>
+                          </div>
+          
+                  </article>
+              <article class="project">
+          <div class="project-head">
+            <div class="work-thumb work-thumb--amber">🛍️</div>
+            <div class="project-heading">
+              <h2 class="project-title">JoymarKet</h2>
+                          </div>
+            <span class="work-tag work-tag--amber">E-commerce</span>
+          </div>
+
+          <p class="project-desc">A desktop e-commerce marketplace application built with JavaFX and backed by a MySQL database.</p>
+
+                      <ul class="project-highlights">
+                              <li>JavaFX desktop interface with layouts defined in FXML.</li>
+                              <li>MySQL database backend accessed over JDBC, with the schema provided in joymarket.sql.</li>
+                              <li>Built with Maven on Java 11, with the application entry point in the view layer.</li>
+                              <li>Ships with a user guide documenting the application.</li>
+                          </ul>
+          
+                      <div class="project-stack">
+                              <span class="stack-pill">Java 11</span>
+                              <span class="stack-pill">JavaFX</span>
+                              <span class="stack-pill">FXML</span>
+                              <span class="stack-pill">MySQL</span>
+                              <span class="stack-pill">JDBC</span>
+                              <span class="stack-pill">Maven</span>
+                          </div>
+          
+                  </article>
+          </div>
+  </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Copy-to-clipboard buttons (with fallback for insecure/older contexts)
+      function fallbackCopy(text) {
+        var ta = document.createElement('textarea');
+        ta.value = text;
+        ta.setAttribute('readonly', '');
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        var ok = false;
+        try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
+        document.body.removeChild(ta);
+        return ok;
+      }
+
+      function flashCopied(btn) {
+        var original = btn.getAttribute('data-label') || btn.textContent;
+        btn.setAttribute('data-label', original);
+        btn.textContent = 'Copied!';
+        btn.classList.add('copied');
+        setTimeout(function () {
+          btn.textContent = original;
+          btn.classList.remove('copied');
+        }, 1500);
+      }
+
+      document.querySelectorAll('.copy-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var code = btn.parentElement.querySelector('code').innerText;
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(code)
+              .then(function () { flashCopied(btn); })
+              .catch(function () { if (fallbackCopy(code)) { flashCopied(btn); } });
+          } else if (fallbackCopy(code)) {
+            flashCopied(btn);
+          }
+        });
+      });
+
+      // Tab switching
+      document.querySelectorAll('.run-tab').forEach(function (tab) {
+        tab.addEventListener('click', function () {
+          var panel = tab.closest('.run-panel');
+          panel.querySelectorAll('.run-tab').forEach(function (t) {
+            t.classList.remove('active');
+            t.setAttribute('aria-selected', 'false');
+          });
+          panel.querySelectorAll('.run-pane').forEach(function (p) {
+            p.hidden = true;
+            p.classList.remove('active');
+          });
+          tab.classList.add('active');
+          tab.setAttribute('aria-selected', 'true');
+          var pane = panel.querySelector('.run-pane[data-pane="' + tab.dataset.tab + '"]');
+          pane.hidden = false;
+          pane.classList.add('active');
+        });
+      });
+    });
+  </script>
+
+
+    
+    <footer class="footer">
+      <span class="footer-text">Zahwan</span>
+      <div class="footer-icons">
+        <a href="#" aria-label="GitHub">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        </a>
+        <a href="#" aria-label="Dribbble">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"/></svg>
+        </a>
+        <a href="#" aria-label="RSS feed">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1" fill="currentColor"/></svg>
+        </a>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    document.getElementById('theme-toggle').addEventListener('click', function () {
+      var root = document.documentElement;
+      // Whatever is showing right now: an explicit choice, else the OS setting.
+      var current = root.getAttribute('data-theme');
+      var effective = current || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      var next = effective === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch (e) {}
+    });
+  </script>
+
+</body>
+</html>

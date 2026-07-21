@@ -9,21 +9,21 @@
         <span class="hero-badge-dot"></span>
         open to new projects
       </div>
-      <h1>Lorem <span>Ipsum</span></h1>
+      <h1>Hi, I'm <span>Zahwan</span>.</h1>
       <p class="hero-sub">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Vestibulum semper orci sed sodales pulvinar. Maecenas eu elit ante.
-        Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+        A Computer Science undergraduate from Jakarta with a strong preference for back-end
+        development. I build responsive applications and wire them up to services in
+        PHP, SQL, and JavaScript.
       </p>
       <div class="hero-actions">
         <a class="btn-primary" href="{{ route('work') }}">view my work</a>
-        <a class="btn-secondary" href="{{ route('resume') }}">↓ résumé</a>
+        <a class="btn-secondary" href="{{ route('resume') }}">↓ resume</a>
       </div>
     </div>
     <div class="avatar-area">
       <div class="avatar-ring">
         <span class="avatar-initials">ZS</span>
-        <span class="avatar-badge">Fresh Graduate</span>
+        <span class="avatar-badge">Undergraduate</span>
       </div>
     </div>
   </section>
@@ -47,10 +47,10 @@
     <div class="work-grid">
       @foreach ($projects as $project)
         <div class="work-card">
-          <div class="work-thumb" style="background: {{ $project['thumb'] }};">{{ $project['emoji'] }}</div>
+          <div class="work-thumb work-thumb--{{ $project['color'] }}">{{ $project['emoji'] }}</div>
           <h3>{{ $project['title'] }}</h3>
           <p>{{ $project['desc'] }}</p>
-          <span class="work-tag {{ $project['tagClass'] }}">{{ $project['tag'] }}</span>
+          <span class="work-tag work-tag--{{ $project['color'] }}">{{ $project['tag'] }}</span>
         </div>
       @endforeach
     </div>
@@ -89,7 +89,7 @@
     <div class="org-list">
       @foreach ($orgs as $org)
         <div class="org-item">
-          <div class="org-logo" style="background: {{ $org['logoBg'] }}; color: {{ $org['logoColor'] }};">{{ $org['logo'] }}</div>
+          <div class="org-logo org-logo--{{ $org['color'] }}">{{ $org['logo'] }}</div>
           <div class="org-body">
             <div class="org-header">
               <div>

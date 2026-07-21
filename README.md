@@ -1,9 +1,9 @@
 # My Portfolio Website
 
-My personal portfolio website, built as a **Laravel** application.
+My personal portfolio website, built as a Laravel application.
 
-> **Tech:** Laravel 13 · PHP 8.5 · Blade · plain CSS · Docker
-> **Database:** none. The site is entirely static content served through Laravel.
+> Tech: Laravel 13 · PHP 8.5 · Blade · plain CSS · Docker
+> Database: none. The site is entirely static content served through Laravel.
 
 ---
 
@@ -20,9 +20,9 @@ Dockerfile, docker-compose.yml                 # containerised run
 
 ---
 
-## Running it
+## Local host the website
 
-### Option A: Docker (recommended, no PHP needed)
+### Option A: Docker (no PHP needed)
 
 Requires only Docker Desktop. From the project root:
 

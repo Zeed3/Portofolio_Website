@@ -42,7 +42,7 @@
     <div class="org-list">
       @foreach ($orgs as $org)
         <div class="org-item">
-          <div class="org-logo" style="background: {{ $org['logoBg'] }}; color: {{ $org['logoColor'] }};">{{ $org['logo'] }}</div>
+          <div class="org-logo org-logo--{{ $org['color'] }}">{{ $org['logo'] }}</div>
           <div class="org-body">
             <div class="org-header">
               <div>

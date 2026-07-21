@@ -15,14 +15,14 @@
       @foreach ($projects as $project)
         <article class="project">
           <div class="project-head">
-            <div class="work-thumb" style="background: {{ $project['thumb'] }};">{{ $project['emoji'] }}</div>
+            <div class="work-thumb work-thumb--{{ $project['color'] }}">{{ $project['emoji'] }}</div>
             <div class="project-heading">
               <h2 class="project-title">{{ $project['title'] }}</h2>
               @if (!empty($project['context']))
                 <span class="project-context">{{ $project['context'] }}</span>
               @endif
             </div>
-            <span class="work-tag {{ $project['tagClass'] }}">{{ $project['tag'] }}</span>
+            <span class="work-tag work-tag--{{ $project['color'] }}">{{ $project['tag'] }}</span>
           </div>
 
           <p class="project-desc">{{ $project['longDesc'] ?? $project['desc'] }}</p>

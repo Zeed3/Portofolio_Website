@@ -18,7 +18,7 @@ class PortfolioController extends Controller
                 ['num' => '100%', 'label' => 'satisfaction rate'],
             ],
 
-            // Home shows only the featured projects.
+            // Home only shows featured projects.
             'projects' => array_values(array_filter(
                 $this->projects(),
                 fn ($p) => $p['featured']
@@ -54,7 +54,7 @@ class PortfolioController extends Controller
                 [
                     'role'   => 'Core Team Member',
                     'org'    => 'Ureeka Binus',
-                    'period' => '2024 - 2026',
+                    'period' => 'Apr. 2024 - 2026',
                     'points' => [
                         'Organized events, hackathons, and teaching sessions.',
                         'Participated in hackathons every semester.',
@@ -83,26 +83,23 @@ class PortfolioController extends Controller
         ]);
     }
 
-    /**
-     * Single source of truth for projects. `featured` controls whether a
-     * project appears on the home page's "selected work" section.
-     */
+    // `featured` controls whether a project appears on the home page's "selected work" section.
+
     private function projects(): array
     {
         return [
             [
-                'title'    => 'This Portfolio Website',
-                'desc'     => 'The site you are on: a Laravel app, containerized with Docker.',
+                'title'    => 'This Website',
+                'desc'     => 'The site you are on is a Laravel app, containerized with Docker.',
                 'emoji'    => '🐳',
-                'thumb'    => '#e6f0fb',
                 'tag'      => 'Web',
-                'tagClass' => 'work-tag--blue',
+                'color'    => 'blue',
                 'featured' => false,
                 'context'  => 'This website',
-                'longDesc' => 'This portfolio itself. It started as a single static HTML/CSS page and was refactored into a Laravel application, then containerized so anyone can run it with one command.',
+                'longDesc' => 'This website started as a single static HTML/CSS page and then refactored into a Laravel application, and then containerised so anyone can run it with one command.',
                 'highlights' => [
-                    'Refactored from static HTML into a Laravel app where every page is data-driven: content lives in the controller and is rendered through Blade.',
-                    'Multiple pages (home, work, about, résumé) built on a single shared Blade layout.',
+                    'Refactored from static HTML into a Laravel app where every page is data-driven where content is in the controller and then rendered through Blade.',
+                    'Multiple pages (home, work, about, resume) built on a single shared Blade layout.',
                     'Fully containerized with Docker, so it runs anywhere with one command, with no local PHP setup required.',
                     'Runs with no database (file-based sessions/cache), so it can also be exported to static hosting.',
                 ],
@@ -113,14 +110,13 @@ class PortfolioController extends Controller
                 'title'    => '2048-in-C',
                 'desc'     => '2048 game built using C.',
                 'emoji'    => '🎮',
-                'thumb'    => '#e1f5ee',
                 'tag'      => 'Game',
-                'tagClass' => 'work-tag--teal',
+                'color'    => 'teal',
                 'featured' => true,
                 'context'  => 'Data Structures coursework',
                 'longDesc' => 'A terminal-based clone of the game 2048, written in C for Windows. It renders a playable board directly in the console, supports two board sizes, and keeps a persistent, ranked leaderboard between sessions.',
                 'highlights' => [
-                    'Selectable 4×4 or 6×6 board, with the grid allocated dynamically as a 2-D array (int**) via malloc.',
+                    'Selectable 4x4 or 6x6 board, with the grid allocated dynamically as a 2D array (int**) via malloc.',
                     'WASD controls with full tile-sliding and merge logic, accumulating score on every merge.',
                     'Random 2/4 tile spawning and game-over detection that checks for both empty cells and any remaining merges.',
                     'Persistent high-score table written to a file, parsed back on launch and ranked with qsort, with auto-generated player IDs.',
@@ -132,9 +128,8 @@ class PortfolioController extends Controller
                 'title'    => 'MayaSense',
                 'desc'     => 'An AI chat bot designed to help new students in navigating university life.',
                 'emoji'    => '🤖',
-                'thumb'    => '#eeedfe',
                 'tag'      => 'AI',
-                'tagClass' => 'work-tag--purple',
+                'color'    => 'purple',
                 'featured' => true,
                 'context'  => 'Team project',
                 'longDesc' => 'A Flask-based AI assistant chatbot that helps BINUS University students navigate and adapt to campus life, pairing an OpenAI-powered conversational core with voice interaction and live web scraping for up-to-date campus information.',
@@ -151,9 +146,8 @@ class PortfolioController extends Controller
                 'title'    => 'JoymarKet',
                 'desc'     => 'Responsive e-commerce app in Java.',
                 'emoji'    => '🛍️',
-                'thumb'    => '#faeeda',
                 'tag'      => 'E-commerce',
-                'tagClass' => 'work-tag--amber',
+                'color'    => 'amber',
                 'featured' => true,
                 'longDesc' => 'A desktop e-commerce marketplace application built with JavaFX and backed by a MySQL database.',
                 'highlights' => [
@@ -170,7 +164,7 @@ class PortfolioController extends Controller
     private function bio(): string
     {
         return 'Computer Science undergraduate with a strong preference towards Back End Development. '
-            . 'Have experience in developing responsive applications using React and Node.js and integrating '
+            . 'Have experience in developing responsive applications and integrating '
             . 'backend services with PHP, SQL, and JS. Experienced in team collaboration using GitHub and '
             . 'deploying applications to production environments. Additional background in Embedded Systems '
             . 'and Internet of Things.';
@@ -195,8 +189,7 @@ class PortfolioController extends Controller
         return [
             [
                 'logo'      => 'BNCC',
-                'logoBg'    => '#eeedfe',
-                'logoColor' => '#3c3489',
+                'color'     => 'purple',
                 'role'      => 'Member',
                 'name'      => 'Bina Nusantara Computer Club',
                 'period'    => 'Sep. 2023 - 2025',
@@ -205,8 +198,7 @@ class PortfolioController extends Controller
             ],
             [
                 'logo'      => 'URK',
-                'logoBg'    => '#e1f5ee',
-                'logoColor' => '#0f6e56',
+                'color'     => 'teal',
                 'role'      => 'Core Team Member',
                 'name'      => 'Ureeka Binus',
                 'period'    => '2024 - 2026',

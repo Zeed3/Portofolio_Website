@@ -5,6 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>@yield('title', 'Zahwan Satria · Portfolio')</title>
   <link rel="stylesheet" href="{{ asset('css/styles.css') }}" />
+  {{-- Applies a saved theme choice before the page paints, so there is no
+       flash of the wrong theme on load. Without a saved choice, the CSS
+       falls back to the operating system's setting. --}}
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('theme');
+        if (saved === 'light' || saved === 'dark') {
+          document.documentElement.setAttribute('data-theme', saved);
+        }
+      } catch (e) {}
+    })();
+  </script>
 </head>
 <body>
 
@@ -16,7 +29,13 @@
       <ul class="nav-links">
         <li><a href="{{ route('work') }}" @class(['active' => request()->routeIs('work')])>work</a></li>
         <li><a href="{{ route('about') }}" @class(['active' => request()->routeIs('about')])>about</a></li>
-        <li><a href="{{ route('resume') }}" @class(['active' => request()->routeIs('resume')])>résumé</a></li>
+        <li><a href="{{ route('resume') }}" @class(['active' => request()->routeIs('resume')])>resume</a></li>
+        <li>
+          <button type="button" class="theme-toggle" id="theme-toggle" title="Switch between light and dark mode" aria-label="Switch between light and dark mode">
+            <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+            <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          </button>
+        </li>
       </ul>
     </nav>
 
@@ -39,6 +58,18 @@
     </footer>
 
   </div>
+
+  <script>
+    document.getElementById('theme-toggle').addEventListener('click', function () {
+      var root = document.documentElement;
+      // Whatever is showing right now: an explicit choice, else the OS setting.
+      var current = root.getAttribute('data-theme');
+      var effective = current || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      var next = effective === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch (e) {}
+    });
+  </script>
 
 </body>
 </html>

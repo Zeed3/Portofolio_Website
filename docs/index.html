@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zahwan Satria · Portfolio</title>
+  <link rel="stylesheet" href="./css/styles.css" />
+  
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('theme');
+        if (saved === 'light' || saved === 'dark') {
+          document.documentElement.setAttribute('data-theme', saved);
+        }
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+
+  <div class="site-wrapper">
+
+    
+    <nav class="nav">
+      <a class="nav-logo" href="./">Zahwan</a>
+      <ul class="nav-links">
+        <li><a href="./work" class="">work</a></li>
+        <li><a href="./about" class="">about</a></li>
+        <li><a href="./resume" class="">resume</a></li>
+        <li>
+          <button type="button" class="theme-toggle" id="theme-toggle" title="Switch between light and dark mode" aria-label="Switch between light and dark mode">
+            <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+            <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          </button>
+        </li>
+      </ul>
+    </nav>
+
+    
+  
+  <section class="hero">
+    <div class="hero-text">
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        open to new projects
+      </div>
+      <h1>Hi, I'm <span>Zahwan</span>.</h1>
+      <p class="hero-sub">
+        A Computer Science undergraduate from Jakarta with a strong preference for back-end
+        development. I build responsive applications and wire them up to services in
+        PHP, SQL, and JavaScript.
+      </p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="./work">view my work</a>
+        <a class="btn-secondary" href="./resume">↓ resume</a>
+      </div>
+    </div>
+    <div class="avatar-area">
+      <div class="avatar-ring">
+        <span class="avatar-initials">ZS</span>
+        <span class="avatar-badge">Undergraduate</span>
+      </div>
+    </div>
+  </section>
+
+  
+  <div class="stats-row">
+          <div class="stat">
+        <div class="stat-num">5+</div>
+        <div class="stat-label">projects shipped</div>
+      </div>
+          <div class="stat">
+        <div class="stat-num">18</div>
+        <div class="stat-label">happy teammates</div>
+      </div>
+          <div class="stat">
+        <div class="stat-num">100%</div>
+        <div class="stat-label">satisfaction rate</div>
+      </div>
+      </div>
+
+  
+  <section class="section">
+    <div class="section-header">
+      <span class="section-title">selected works</span>
+      <a href="./work" class="section-link">view all →</a>
+    </div>
+    <div class="work-grid">
+              <div class="work-card">
+          <div class="work-thumb work-thumb--teal">🎮</div>
+          <h3>2048-in-C</h3>
+          <p>2048 game built using C.</p>
+          <span class="work-tag work-tag--teal">Game</span>
+        </div>
+              <div class="work-card">
+          <div class="work-thumb work-thumb--purple">🤖</div>
+          <h3>MayaSense</h3>
+          <p>An AI chat bot designed to help new students in navigating university life.</p>
+          <span class="work-tag work-tag--purple">AI</span>
+        </div>
+              <div class="work-card">
+          <div class="work-thumb work-thumb--amber">🛍️</div>
+          <h3>JoymarKet</h3>
+          <p>Responsive e-commerce app in Java.</p>
+          <span class="work-tag work-tag--amber">E-commerce</span>
+        </div>
+          </div>
+  </section>
+
+  <div class="divider"></div>
+
+  
+  <section class="about-section">
+    <div class="about-text">
+      <h2>about me</h2>
+      <p>Computer Science undergraduate with a strong preference towards Back End Development. Have experience in developing responsive applications and integrating backend services with PHP, SQL, and JS. Experienced in team collaboration using GitHub and deploying applications to production environments. Additional background in Embedded Systems and Internet of Things.</p>
+      <div class="skills-wrap">
+                  <span class="skill-pill">Java</span>
+                  <span class="skill-pill">HTML/CSS</span>
+                  <span class="skill-pill">JavaScript</span>
+                  <span class="skill-pill">.NET</span>
+                  <span class="skill-pill">MySQL</span>
+                  <span class="skill-pill">C/C#</span>
+              </div>
+    </div>
+
+    <div class="contact-card">
+      <h3>contacts</h3>
+              <div class="contact-item">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+              zahwan.satria@gmail.com
+        </div>
+              <div class="contact-item">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="4"/><path d="M16 8h-2a4 4 0 0 0-4 4v2H8m4-6v10"/></svg>
+              linkedin/zahwansatria
+        </div>
+              <div class="contact-item">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+              Jakarta, Indonesia
+        </div>
+          </div>
+  </section>
+
+  
+  <section class="section">
+    <div class="section-header">
+      <span class="section-title">organisational experience</span>
+    </div>
+    <div class="org-list">
+              <div class="org-item">
+          <div class="org-logo org-logo--purple">BNCC</div>
+          <div class="org-body">
+            <div class="org-header">
+              <div>
+                <div class="org-role">Member</div>
+                <div class="org-name">Bina Nusantara Computer Club</div>
+              </div>
+              <span class="org-period">Sep. 2023 - 2025</span>
+            </div>
+            <p class="org-desc">Learned various programming languages, topics (Java and UI/UX design principles), and backend development using MySQL.</p>
+            <div class="org-tags">
+                              <span class="org-tag">Learning</span>
+                          </div>
+          </div>
+        </div>
+              <div class="org-item">
+          <div class="org-logo org-logo--teal">URK</div>
+          <div class="org-body">
+            <div class="org-header">
+              <div>
+                <div class="org-role">Core Team Member</div>
+                <div class="org-name">Ureeka Binus</div>
+              </div>
+              <span class="org-period">2024 - 2026</span>
+            </div>
+            <p class="org-desc">Organized events, hackathons, and teaching sessions. Participated in hackathons every semester. Teaching and group sessions about Laravel, HTML, CSS, Flask, Flutter, etc.</p>
+            <div class="org-tags">
+                              <span class="org-tag">Leadership</span>
+                              <span class="org-tag">Teaching</span>
+                          </div>
+          </div>
+        </div>
+          </div>
+  </section>
+
+
+    
+    <footer class="footer">
+      <span class="footer-text">Zahwan</span>
+      <div class="footer-icons">
+        <a href="#" aria-label="GitHub">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        </a>
+        <a href="#" aria-label="Dribbble">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"/></svg>
+        </a>
+        <a href="#" aria-label="RSS feed">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1" fill="currentColor"/></svg>
+        </a>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    document.getElementById('theme-toggle').addEventListener('click', function () {
+      var root = document.documentElement;
+      // Whatever is showing right now: an explicit choice, else the OS setting.
+      var current = root.getAttribute('data-theme');
+      var effective = current || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      var next = effective === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch (e) {}
+    });
+  </script>
+
+</body>
+</html>
