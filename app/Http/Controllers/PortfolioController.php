@@ -178,8 +178,8 @@ class PortfolioController extends Controller
     private function contacts(): array
     {
         return [
-            ['icon' => 'mail',     'text' => 'zahwan.satria@gmail.com'],
-            ['icon' => 'linkedin', 'text' => 'linkedin/zahwansatria'],
+            ['icon' => 'mail',     'text' => 'zahwan.satria@gmail.com', 'url' => 'mailto:zahwan.satria@gmail.com'],
+            ['icon' => 'linkedin', 'text' => 'linkedin/zahwansatria',   'url' => 'https://www.linkedin.com/in/zahwansatria'],
             ['icon' => 'location', 'text' => 'Jakarta, Indonesia'],
         ];
     }

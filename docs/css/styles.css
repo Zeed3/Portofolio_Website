@@ -438,7 +438,8 @@ body {
 /* ===== Contact Card ===== */
 .contact-card {
   flex-shrink: 0;
-  width: 200px;
+  /* Wide enough for the email address to sit clear of the right padding. */
+  width: 232px;
   background: var(--surface);
   border: 0.5px solid var(--border);
   border-radius: 12px;
@@ -459,6 +460,23 @@ body {
   font-size: 13px;
   color: var(--text-muted);
   margin-bottom: 10px;
+  /* Let long values wrap instead of spilling past the card edge. */
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+/* Contact rows that are links (email, LinkedIn) */
+a.contact-item {
+  text-decoration: none;
+  color: var(--text-muted);
+}
+
+a.contact-item:hover {
+  color: var(--text);
+}
+
+a.contact-item:hover svg {
+  color: var(--accent-hover);
 }
 
 .contact-item svg {

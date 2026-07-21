@@ -3,7 +3,7 @@
 My personal portfolio website, built as a Laravel application.
 
 > Tech: Laravel 13 · PHP 8.5 · Blade · plain CSS · Docker
-> Database: none. The site is entirely static content served through Laravel.
+> The site is entirely static content served through Laravel.
 
 ---
 

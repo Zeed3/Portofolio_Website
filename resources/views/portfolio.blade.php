@@ -73,10 +73,7 @@
     <div class="contact-card">
       <h3>contacts</h3>
       @foreach ($contacts as $contact)
-        <div class="contact-item">
-          @include('partials.icon', ['name' => $contact['icon']])
-          {{ $contact['text'] }}
-        </div>
+        @include('partials.contact-item')
       @endforeach
     </div>
   </section>

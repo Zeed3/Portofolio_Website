@@ -66,10 +66,7 @@
       <h2 class="resume-heading">Contact</h2>
       <div class="org-list">
         @foreach ($contacts as $contact)
-          <div class="contact-item">
-            @include('partials.icon', ['name' => $contact['icon']])
-            {{ $contact['text'] }}
-          </div>
+          @include('partials.contact-item')
         @endforeach
       </div>
     </div>
